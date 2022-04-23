@@ -547,10 +547,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1059517712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b356d879ab4e64db32a6faddac42cc, type: 3}
+  m_Script: {fileID: 11500000, guid: efe1f865bd315624c8cebe0b1d52fb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToUpdLevel: 0
 --- !u!1 &1633454229
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054501839378974657, guid: 206bde169b986c24f826498e5ba9ed45, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.655
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2054501839378974657, guid: 206bde169b986c24f826498e5ba9ed45, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -726,6 +725,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1059517717}
+    - target: {fileID: 2054501839378974670, guid: 206bde169b986c24f826498e5ba9ed45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayAgain
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054501839378974670, guid: 206bde169b986c24f826498e5ba9ed45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 206bde169b986c24f826498e5ba9ed45, type: 3}
 --- !u!1001 &4168723975591544846

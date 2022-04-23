@@ -13,15 +13,17 @@ public class Target : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Disappear()
     {
-        GameManager.UpdateScore(targetPoints); 
-        Destroy(gameObject); 
+        GameManager.UpdateScore(targetPoints);
+        gameObject.SetActive(false);  
+    }
+
+    private void OnMouseDown()
+    {
+        if (!GameManager.GamePaused && !GameManager.GameOver)
+        {
+            Disappear();
+        }
     }
 }

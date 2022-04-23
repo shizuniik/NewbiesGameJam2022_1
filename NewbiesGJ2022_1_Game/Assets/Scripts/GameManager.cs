@@ -14,13 +14,18 @@ public class GameManager : MonoBehaviour
     public static int HighScore { get; private set; }
     public static bool GameOver { get; set; }
     public static bool GameStarted { get; set; }
+    public static bool GamePaused { get; set; }
 
     public static GameManager Instance;
 
     public delegate void ChangeScore();
     public static event ChangeScore OnChangeScore;
     public static event ChangeScore OnChangeHighScore;
-    public static event ChangeScore OnChangeLevel; 
+    public static event ChangeScore OnChangeLevel;
+
+   /* public delegate void ChangeGameStatus();
+    public static event ChangeGameStatus OnGameOver;
+    public static event ChangeGameStatus OnGameEnd; */ // REVISAR 
 
     private void Awake()
     {
@@ -31,16 +36,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       /* if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
             Destroy(gameObject); 
         }
 
-        DontDestroyOnLoad(instance); */ 
+        DontDestroyOnLoad(Instance);  
     }
 
     // Update is called once per frame
@@ -81,13 +86,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    public void PauseButton()
     {
-        SceneManager.LoadScene(1); 
-    }
-
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene(1); 
+        GamePaused = !GamePaused;
+        Time.timeScale = GamePaused ? 0 : 1;
     }
 }

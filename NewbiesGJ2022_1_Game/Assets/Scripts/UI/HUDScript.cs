@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; 
+using TMPro;
 
 public class HUDScript : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class HUDScript : MonoBehaviour
 
     private void ScoreTextUpdate()
     {
-        scoreText.text = GameManager.Score.ToString(); 
+        scoreText.text = GameManager.Score.ToString();
     }
 
     private void HighScoreTextUpdate()
@@ -37,4 +37,5 @@ public class HUDScript : MonoBehaviour
     {
         levelText.text = GameManager.Level.ToString();
     }
+
 }

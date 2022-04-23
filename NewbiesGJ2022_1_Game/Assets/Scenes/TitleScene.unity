@@ -509,10 +509,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499841111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b356d879ab4e64db32a6faddac42cc, type: 3}
+  m_Script: {fileID: 11500000, guid: efe1f865bd315624c8cebe0b1d52fb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToUpdLevel: 0
 --- !u!1 &1521796777
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270603016266273497, guid: 4010d5ed1a2b5154ea20ee9b3449d5a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: UIScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 270603016266273497, guid: 4010d5ed1a2b5154ea20ee9b3449d5a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
