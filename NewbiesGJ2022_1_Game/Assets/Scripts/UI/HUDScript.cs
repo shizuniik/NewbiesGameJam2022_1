@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HUDScript : MonoBehaviour
 {
@@ -54,6 +55,13 @@ public class HUDScript : MonoBehaviour
     private void LevelTextUpdate()
     {
         levelText.text = GameManager.Level.ToString();
+
+        if (GameManager.Level == GameManager.Instance.MaxLevel) { SceneManager.LoadScene(3); }
     }
 
+    public void PauseButton()
+    {
+        GameManager.GamePaused = !GameManager.GamePaused;
+        Time.timeScale = GameManager.GamePaused ? 0 : 1;
+    }
 }

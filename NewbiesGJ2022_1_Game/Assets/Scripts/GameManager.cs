@@ -6,8 +6,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]public int pointsToUpdLevel;
-
+    public int pointsToUpdLevel;
+    public int MaxLevel; 
 
     public static int Score { get;  set; }
     public static int Level { get; private set; }
@@ -97,9 +97,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(2); 
     }
 
-    public void PauseButton()
+    private void WonGameScene()
     {
-        GamePaused = !GamePaused;
-        Time.timeScale = GamePaused ? 0 : 1;
+        SceneManager.LoadScene(3); 
     }
 }

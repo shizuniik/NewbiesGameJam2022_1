@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToUpdLevel: 10
+  MaxLevel: 2
 --- !u!4 &177973126
 Transform:
   m_ObjectHideFlags: 0
@@ -1354,7 +1355,7 @@ PrefabInstance:
     - target: {fileID: 270603016266273497, guid: 4010d5ed1a2b5154ea20ee9b3449d5a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 177973125}
+      objectReference: {fileID: 1707891831}
     - target: {fileID: 270603016266273497, guid: 4010d5ed1a2b5154ea20ee9b3449d5a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1365,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270603016266273497, guid: 4010d5ed1a2b5154ea20ee9b3449d5a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: HUDScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 270603016266273497, guid: 4010d5ed1a2b5154ea20ee9b3449d5a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
