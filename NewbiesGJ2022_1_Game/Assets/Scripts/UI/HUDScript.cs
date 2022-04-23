@@ -8,6 +8,22 @@ public class HUDScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] TextMeshProUGUI instructionText;
+
+    private void Awake()
+    {
+        HighScoreTextUpdate();
+    }
+
+    private void Start()
+    {
+        if(GameManager.GameStarted == false) { HideInstructions(false);  }
+    }
+
+    private void HideInstructions(bool hide)
+    {
+        instructionText.gameObject.SetActive(!hide);
+    }
 
     private void OnEnable()
     {
@@ -25,6 +41,8 @@ public class HUDScript : MonoBehaviour
 
     private void ScoreTextUpdate()
     {
+        if (GameManager.Score == 1) { HideInstructions(true); }
+
         scoreText.text = GameManager.Score.ToString();
     }
 

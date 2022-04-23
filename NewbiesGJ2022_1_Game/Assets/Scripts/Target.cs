@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    [SerializeField] int targetPoints; 
-   
+    [SerializeField] int targetPoints;
+
+    //public delegate void ChangeTargetsQty();
+    //public static event ChangeTargetsQty OnChangeTargetsQty;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,9 @@ public class Target : MonoBehaviour
         if (!GameManager.GamePaused && !GameManager.GameOver)
         {
             Disappear();
+            TargetSpawner.TargetsOnGame--;
+
+            //OnChangeTargetsQty?.Invoke(); 
         }
     }
 }

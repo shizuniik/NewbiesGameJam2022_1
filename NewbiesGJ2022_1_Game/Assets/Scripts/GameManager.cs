@@ -6,8 +6,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int pointsToUpdLevel;
-    [SerializeField] TextMeshProUGUI instructionText; 
+    [SerializeField]public int pointsToUpdLevel;
+
 
     public static int Score { get;  set; }
     public static int Level { get; private set; }
@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Level = 1;
-        Score = 0; 
-
+        Score = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -51,15 +50,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Score == 1) { HideInstructions(true);  }
-
         UpdateHighScore();
-        UpdateLevel(); 
+        UpdateLevel();
     }
 
-    private void HideInstructions(bool hide)
+    private void OnEnable()
     {
-        instructionText.gameObject.SetActive(!hide);  
+        //TargetSpawner.OnChangeTargetsQty += ShowTargetsQty;
+        //Target.OnChangeTargetsQty += ShowTargetsQty; 
+        TargetSpawner.OnChangeGameStatus += GameOverScene;
+    }
+
+    private void OnDisable()
+    {
+        // TargetSpawner.OnChangeTargetsQty -= ShowTargetsQty;
+        // Target.OnChangeTargetsQty -= ShowTargetsQty;
+        TargetSpawner.OnChangeGameStatus -= GameOverScene;
     }
 
     public static void UpdateScore(int points)
@@ -84,6 +90,11 @@ public class GameManager : MonoBehaviour
             Level = Mathf.FloorToInt(Score / pointsToUpdLevel) + 1;
             OnChangeLevel?.Invoke();
         }
+    }
+
+    private void GameOverScene()
+    {
+        SceneManager.LoadScene(2); 
     }
 
     public void PauseButton()
