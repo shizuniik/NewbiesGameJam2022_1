@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateLevel()
     {
-        if (Score > pointsToUpdLevel)
+        if (Level < Mathf.FloorToInt(Score / pointsToUpdLevel) + 1)
         { 
             Level = Mathf.FloorToInt(Score / pointsToUpdLevel) + 1;
             OnChangeLevel?.Invoke();
