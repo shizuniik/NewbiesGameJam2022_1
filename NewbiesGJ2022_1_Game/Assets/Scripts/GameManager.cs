@@ -47,13 +47,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(Instance);  
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateHighScore();
-        UpdateLevel();
-    }
-
     private void OnEnable()
     {
         //TargetSpawner.OnChangeTargetsQty += ShowTargetsQty;
@@ -71,7 +64,10 @@ public class GameManager : MonoBehaviour
     public static void UpdateScore(int points)
     {
         Score += points;
-        OnChangeScore?.Invoke(); 
+        OnChangeScore?.Invoke();
+
+        GameManager.Instance.UpdateHighScore();
+        GameManager.Instance.UpdateLevel();
     }
 
     private void UpdateHighScore()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 221334273739717890}
   - component: {fileID: 221334273739717891}
   - component: {fileID: -3140331222809503010}
-  - component: {fileID: 7742103334581928248}
+  - component: {fileID: -8823840399738672802}
   m_Layer: 0
   m_Name: TargetB
   m_TagString: Target
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPoints: 1
---- !u!54 &7742103334581928248
+--- !u!54 &-8823840399738672802
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

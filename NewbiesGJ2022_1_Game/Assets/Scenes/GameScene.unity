@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToUpdLevel: 10
-  MaxLevel: 2
+  MaxLevel: 100
 --- !u!4 &177973126
 Transform:
   m_ObjectHideFlags: 0
@@ -245,6 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085283c127c9b9a408a57302ed373b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xRange: 25
+  zMinValue: 5
+  zMaxValue: 20
+  initialSpawnRate: 5
 --- !u!1 &588436031
 GameObject:
   m_ObjectHideFlags: 0
