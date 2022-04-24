@@ -21,7 +21,6 @@ public class TargetSpawner : MonoBehaviour
     void Start()
     {
         objectPoolManager = ObjectPoolManager.SharedInstance;
-        //InvokeRepeating("Spawn", 0, initialSpawnRate); 
         StartCoroutine("SpawnCoroutine"); 
         TargetsOnGame = 0; 
     }
@@ -38,7 +37,6 @@ public class TargetSpawner : MonoBehaviour
 
     private void CheckGameOver()
     {
-        Debug.Log("check game over: " + TargetsOnGame + " poitns to up level: " + GameManager.Instance.pointsToUpdLevel);
         if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel)
         {
             GameManager.GameOver = true;
@@ -77,30 +75,18 @@ public class TargetSpawner : MonoBehaviour
             TargetsOnGame++;
             GameObject tb = objectPoolManager.SpawnFromPool("TargetB", randomPos(), Quaternion.identity);
             TargetsOnGame++;
+            GameObject tc = objectPoolManager.SpawnFromPool("TargetC", randomPos(), Quaternion.identity);
+            TargetsOnGame++;
 
             OnChangeTargetsQty?.Invoke();
 
             WarningNearGameOver();
             CheckGameOver();
- 
+
             Debug.Log(TargetsOnGame + " spawn rate: " + initialSpawnRate);
+
             yield return new WaitForSeconds(initialSpawnRate);
-
         }
-
     }
 
-   /* private void Spawn()
-    {
-        GameObject ta = objectPoolManager.SpawnFromPool("TargetA", randomPos(), Quaternion.identity);
-        TargetsOnGame++;
-        GameObject tb = objectPoolManager.SpawnFromPool("TargetB", randomPos(), Quaternion.identity);
-        TargetsOnGame++;
-
-        OnChangeTargetsQty?.Invoke();
-
-        WarningNearGameOver();
-        CheckGameOver();
-    }
-   */
 }
