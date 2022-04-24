@@ -20,6 +20,7 @@ public class UIScript : MonoBehaviour
 
     public void PlayAgain()
     {
+        TargetSpawner.TargetsOnGame = 0; 
         GameManager.GameOver = false;
         GameManager.GameStarted = true; 
         SceneManager.LoadScene(1);
