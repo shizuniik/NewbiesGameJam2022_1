@@ -65,7 +65,6 @@ public class ObjectPoolManager: MonoBehaviour
         obj.transform.position = position;
         obj.transform.rotation = rotation;
 
-
         poolDictionary[tag].Enqueue(obj); 
 
         return obj; 

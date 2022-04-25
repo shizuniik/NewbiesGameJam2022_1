@@ -34,6 +34,6 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y >= yMax)
             transform.position = new Vector3(transform.position.x, yMax, transform.position.z);
 
-        Debug.Log(Screen.height + " - " + Screen.width); 
     }
+
 }
