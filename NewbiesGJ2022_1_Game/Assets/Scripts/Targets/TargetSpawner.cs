@@ -37,7 +37,7 @@ public class TargetSpawner : MonoBehaviour
 
     private void CheckGameOver()
     {
-        if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel)
+        if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 1.5f)
         {
             GameManager.GameOver = true;
 
@@ -51,9 +51,9 @@ public class TargetSpawner : MonoBehaviour
             Random.Range(Bounds.MinZ + offset, Bounds.MaxZ - offset)); 
     }
 
-    private void WarningNearGameOver() // COMPLETAR 
+    private void WarningNearGameOver() 
     {
-        if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 0.8)
+        if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 1.2f)
         {
             warningText.gameObject.SetActive(true); 
         }

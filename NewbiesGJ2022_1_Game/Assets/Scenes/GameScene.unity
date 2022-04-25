@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToUpdLevel: 50
-  MaxLevel: 300
+  MaxLevel: 200
 --- !u!4 &177973126
 Transform:
   m_ObjectHideFlags: 0
@@ -1784,11 +1784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6391540541274979236, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6391540541274979236, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6391540541274979236, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
       propertyPath: m_LocalPosition.x

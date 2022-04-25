@@ -23,10 +23,6 @@ public class GameManager : MonoBehaviour
     public static event ChangeScore OnChangeHighScore;
     public static event ChangeScore OnChangeLevel;
 
-   /* public delegate void ChangeGameStatus();
-    public static event ChangeGameStatus OnGameOver;
-    public static event ChangeGameStatus OnGameEnd; */ // REVISAR 
-
     private void Awake()
     {
         Level = 1;
@@ -49,15 +45,11 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //TargetSpawner.OnChangeTargetsQty += ShowTargetsQty;
-        //Target.OnChangeTargetsQty += ShowTargetsQty; 
         TargetSpawner.OnChangeGameStatus += GameOverScene;
     }
 
     private void OnDisable()
     {
-        // TargetSpawner.OnChangeTargetsQty -= ShowTargetsQty;
-        // Target.OnChangeTargetsQty -= ShowTargetsQty;
         TargetSpawner.OnChangeGameStatus -= GameOverScene;
     }
 
