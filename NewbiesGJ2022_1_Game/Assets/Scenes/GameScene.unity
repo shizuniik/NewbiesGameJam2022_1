@@ -264,6 +264,9 @@ MonoBehaviour:
   - tag: TargetC
     prefab: {fileID: 1594806253338452176, guid: de31cadcf2aec454e8746d423a851773, type: 3}
     size: 200
+  - tag: Powerup
+    prefab: {fileID: 8467802511405498854, guid: 1c3175f683d76ad478673aff1fe106cd, type: 3}
+    size: 10
 --- !u!114 &520437070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +479,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8832803996889318554, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
       propertyPath: m_text
-      value: '> Use Arrow keys to move and Left Ctrl key to destroy targets! < '
+      value: '> Use Arrow keys to move and Left Ctrl key to destroy the targets!
+        < '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
@@ -1390,6 +1394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsCamera: {fileID: 746956648}
   range: 1000
+  fireRate: 15
 --- !u!1001 &1945360887
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,11 +5,13 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     [SerializeField] int targetPoints;
+    public GameObject explosionParticle; 
 
     public void Disappear()
     {
         if (!GameManager.GamePaused && !GameManager.GameOver)
         {
+            Instantiate(explosionParticle, transform.position, Quaternion.identity); 
             GameManager.UpdateScore(targetPoints);
             gameObject.SetActive(false);
 

@@ -42,7 +42,7 @@ public class HUDScript : MonoBehaviour
 
     private void ScoreTextUpdate()
     {
-        if (GameManager.Score == 1) { HideInstructions(true); }
+        if (GameManager.Score > 0) { HideInstructions(true); }
 
         scoreText.text = GameManager.Score.ToString();
     }
