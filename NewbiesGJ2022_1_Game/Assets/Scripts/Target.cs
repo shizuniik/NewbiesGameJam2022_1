@@ -23,4 +23,9 @@ public class Target : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        transform.gameObject.GetComponent<Rigidbody>().useGravity = false; 
+    }
+
 }
