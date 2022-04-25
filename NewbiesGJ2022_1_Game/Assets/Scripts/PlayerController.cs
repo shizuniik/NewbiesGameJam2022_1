@@ -5,9 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
-    [SerializeField] float xRange;
-    [SerializeField] float yMin;
-    [SerializeField] float yMax; 
 
     // Update is called once per frame
     void Update()
@@ -20,19 +17,19 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.up * Input.GetAxis("Vertical") * Time.deltaTime * speed);
         transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * speed);
 
-        Bounds();
+        BoundsControl();
     }
 
-    private void Bounds()
+    private void BoundsControl()
     {
-        if (transform.position.x <= -xRange)
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        if (transform.position.x >= xRange)
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        if (transform.position.y <= yMin)
-            transform.position = new Vector3(transform.position.x, yMin, transform.position.z);
-        if (transform.position.y >= yMax)
-            transform.position = new Vector3(transform.position.x, yMax, transform.position.z);
+        if (transform.position.x <= Bounds.MinX)
+            transform.position = new Vector3(Bounds.MinX, transform.position.y, transform.position.z);
+        if (transform.position.x >= Bounds.MaxX)
+            transform.position = new Vector3(Bounds.MaxX, transform.position.y, transform.position.z);
+        if (transform.position.y <= Bounds.MinY)
+            transform.position = new Vector3(transform.position.x, Bounds.MinY, transform.position.z);
+        if (transform.position.y >= Bounds.MaxY)
+            transform.position = new Vector3(transform.position.x, Bounds.MaxY, transform.position.z);
 
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; 
 
 public class TargetSpawner : MonoBehaviour
 {
@@ -12,10 +13,9 @@ public class TargetSpawner : MonoBehaviour
     public static event ChangeTargetsQty OnChangeTargetsQty;
     public static event ChangeTargetsQty OnChangeGameStatus;
 
-    [SerializeField] float xRange;
-    [SerializeField] float zMinValue;
-    [SerializeField] float zMaxValue;
-    [SerializeField] float initialSpawnRate; 
+    [SerializeField] float initialSpawnRate;
+    [SerializeField] TextMeshProUGUI warningText;
+    [SerializeField] float offset; 
 
     // Start is called before the first frame update
     void Start()
@@ -47,18 +47,19 @@ public class TargetSpawner : MonoBehaviour
 
     private Vector3 randomPos()
     {
-        return new Vector3(Random.Range(-xRange, xRange), transform.position.y, Random.Range(zMinValue, zMaxValue)); 
+        return new Vector3(Random.Range(Bounds.MinX + offset, Bounds.MaxX - offset), transform.position.y, 
+            Random.Range(Bounds.MinZ + offset, Bounds.MaxZ - offset)); 
     }
 
     private void WarningNearGameOver() // COMPLETAR 
     {
         if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 0.8)
         {
-            Debug.Log("Hurry up!"); 
+            warningText.gameObject.SetActive(true); 
         }
         else
         {
-            Debug.Log(TargetsOnGame);
+            warningText.gameObject.SetActive(false); 
         }
     }
 
@@ -82,8 +83,6 @@ public class TargetSpawner : MonoBehaviour
 
             WarningNearGameOver();
             CheckGameOver();
-
-            Debug.Log(TargetsOnGame + " spawn rate: " + initialSpawnRate);
 
             yield return new WaitForSeconds(initialSpawnRate);
         }
