@@ -760,11 +760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6391540541274979236, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6391540541274979236, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6391540541274979236, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -814,6 +814,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6391540541274979237, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 728128c67c1a8454fb259bdd29840e0c, type: 3}
     - target: {fileID: 6391540541274979239, guid: 4cf446353bb91ca46b52c345f1fb6bba, type: 3}
       propertyPath: m_Name
       value: crosshair
