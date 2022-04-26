@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); 
         }
 
-        DontDestroyOnLoad(Instance);  
+        DontDestroyOnLoad(gameObject);  
     }
 
     private void OnEnable()
@@ -74,7 +74,8 @@ public class GameManager : MonoBehaviour
     private void UpdateLevel()
     {
         if (Level < Mathf.FloorToInt(Score / pointsToUpdLevel) + 1)
-        { 
+        {
+            AudioManager.Instance.Play("ChangeLevel"); 
             Level = Mathf.FloorToInt(Score / pointsToUpdLevel) + 1;
             OnChangeLevel?.Invoke();
         }
@@ -85,8 +86,4 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(2); 
     }
 
-    private void WonGameScene()
-    {
-        SceneManager.LoadScene(3); 
-    }
 }

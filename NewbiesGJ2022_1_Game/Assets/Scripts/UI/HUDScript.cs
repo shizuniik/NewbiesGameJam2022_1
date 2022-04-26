@@ -56,11 +56,16 @@ public class HUDScript : MonoBehaviour
     {
         levelText.text = GameManager.Level.ToString();
 
-        if (GameManager.Level == GameManager.Instance.MaxLevel) { SceneManager.LoadScene(3); }
+        if (GameManager.Level == GameManager.Instance.MaxLevel) 
+        {
+            AudioManager.Instance.Play("WinSound");
+            SceneManager.LoadScene(3);
+        }
     }
 
     public void PauseButton()
     {
+        AudioManager.Instance.Play("ClickButton"); 
         GameManager.GamePaused = !GameManager.GamePaused;
         Time.timeScale = GameManager.GamePaused ? 0 : 1;
     }

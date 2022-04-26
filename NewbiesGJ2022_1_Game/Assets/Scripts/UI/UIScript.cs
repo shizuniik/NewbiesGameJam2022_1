@@ -14,12 +14,14 @@ public class UIScript : MonoBehaviour
     }
 
     public void StartGame()
-    { 
+    {
+        AudioManager.Instance.Play("ClickButton");
         SceneManager.LoadScene(1);
     }
 
     public void PlayAgain()
     {
+        AudioManager.Instance.Play("ClickButton");
         TargetSpawner.TargetsOnGame = 0; 
         GameManager.GameOver = false;
         GameManager.GameStarted = true; 

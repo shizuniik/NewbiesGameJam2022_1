@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPoints: 1
   explosionParticle: {fileID: 143918981123517719, guid: 123c2993bcb8c4e44b19292f6fe9496e, type: 3}
+  explosionSound: {fileID: 8300000, guid: a1db0e074a63aac4a88c82226bd805a4, type: 3}
 --- !u!54 &3354427722962415463
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2213581988551079518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2213581988551079516}
+  - component: {fileID: 2213581988551079519}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2213581988551079516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213581988551079518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.6207104, y: 11.595814, z: -36.959038}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2213581988551079519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213581988551079518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12b670c9aae5a5439cc524ca7ec391a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundList:
+  - name: TargetExplosion
+    clip: {fileID: 8300000, guid: a1db0e074a63aac4a88c82226bd805a4, type: 3}
+    volume: 0.5
+    loop: 0
+    pitch: 1
+    source: {fileID: 0}
+  - name: ChangeLevel
+    clip: {fileID: 8300000, guid: 6748546430384ff40b42db124adc511c, type: 3}
+    volume: 0.3
+    loop: 0
+    pitch: 1
+    source: {fileID: 0}
+  - name: Warning
+    clip: {fileID: 8300000, guid: eaec9ef2047c8b14dbaf2694f61a9f0c, type: 3}
+    volume: 0.3
+    loop: 0
+    pitch: 1
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 75c1b59e5fbbf4640b6027610eed7402, type: 3}
+    volume: 0.5
+    loop: 0
+    pitch: 3
+    source: {fileID: 0}
+  - name: ClickButton
+    clip: {fileID: 8300000, guid: 63cadefa86aad96469dfcd4b5e5cd117, type: 3}
+    volume: 0.3
+    loop: 0
+    pitch: 1
+    source: {fileID: 0}

@@ -5,13 +5,16 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     [SerializeField] int targetPoints;
-    public GameObject explosionParticle; 
+    public GameObject explosionParticle;
 
     public void Disappear()
     {
         if (!GameManager.GamePaused && !GameManager.GameOver)
         {
-            Instantiate(explosionParticle, transform.position, Quaternion.identity); 
+            GameObject explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+            Destroy(explosion, 2f);
+            AudioManager.Instance.Play("TargetExplosion");
+
             GameManager.UpdateScore(targetPoints);
             gameObject.SetActive(false);
 

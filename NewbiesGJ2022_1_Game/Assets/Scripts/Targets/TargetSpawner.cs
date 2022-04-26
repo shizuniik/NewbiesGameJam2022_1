@@ -15,7 +15,7 @@ public class TargetSpawner : MonoBehaviour
 
     [SerializeField] float initialSpawnRate;
     [SerializeField] TextMeshProUGUI warningText;
-    [SerializeField] float offset; 
+    [SerializeField] float offset;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class TargetSpawner : MonoBehaviour
         if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 1.5f)
         {
             GameManager.GameOver = true;
-
+            AudioManager.Instance.Play("GameOver"); 
             OnChangeGameStatus?.Invoke();
         }
     }
@@ -55,6 +55,7 @@ public class TargetSpawner : MonoBehaviour
     {
         if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 1.2f)
         {
+            AudioManager.Instance.Play("Warning");
             warningText.gameObject.SetActive(true); 
         }
         else

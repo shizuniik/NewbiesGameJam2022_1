@@ -5,11 +5,28 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] float speedIncreaseRate; 
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnChangeLevel += ChangeSpeed; 
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnChangeLevel -= ChangeSpeed; 
+    }
+
+    private void ChangeSpeed()
+    {
+        if(speed <= 100f)
+            speed += speedIncreaseRate; 
     }
 
     private void Movement()

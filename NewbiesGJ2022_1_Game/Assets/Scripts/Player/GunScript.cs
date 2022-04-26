@@ -7,6 +7,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] Camera fpsCamera;
     [SerializeField] float range;
     [SerializeField] float fireRate;
+    [SerializeField] ParticleSystem fireParticle; 
 
     private float nextTimeToFire = 0f; 
 
@@ -22,6 +23,8 @@ public class GunScript : MonoBehaviour
 
     private void Shoot()
     {
+        //fireParticle.Play();
+
         RaycastHit hit;
             
         if(Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
