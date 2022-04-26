@@ -73,11 +73,11 @@ public class TargetSpawner : MonoBehaviour
     {
         while (!GameManager.GameOver)
         {
-            GameObject ta = objectPoolManager.SpawnFromPool("TargetA", randomPos(), Quaternion.identity);
+            GameObject ta = objectPoolManager.SpawnFromPool("Target1", randomPos(), Quaternion.identity);
             TargetsOnGame++;
-            GameObject tb = objectPoolManager.SpawnFromPool("TargetB", randomPos(), Quaternion.identity);
+            GameObject tb = objectPoolManager.SpawnFromPool("Target2", randomPos(), Quaternion.identity);
             TargetsOnGame++;
-            GameObject tc = objectPoolManager.SpawnFromPool("TargetC", randomPos(), Quaternion.identity);
+            GameObject tc = objectPoolManager.SpawnFromPool("Target3", randomPos(), Quaternion.identity);
             TargetsOnGame++;
 
             OnChangeTargetsQty?.Invoke();
