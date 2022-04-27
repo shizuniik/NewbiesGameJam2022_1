@@ -66,7 +66,7 @@ public class TargetSpawner : MonoBehaviour
 
     private void AdaptSpawnRate()
     {
-        initialSpawnRate -= 0.05f; 
+        initialSpawnRate -= GameManager.Level < 15 ? 0.1f : 0.05f; 
     }
 
     IEnumerator SpawnCoroutine()
@@ -80,7 +80,8 @@ public class TargetSpawner : MonoBehaviour
             GameObject tc = objectPoolManager.SpawnFromPool("Target3", randomPos(), Quaternion.identity);
             TargetsOnGame++;
 
-           // OnChangeTargetsQty?.Invoke();
+            // OnChangeTargetsQty?.Invoke();
+            Debug.Log(TargetsOnGame); 
 
             WarningNearGameOver();
             CheckGameOver();

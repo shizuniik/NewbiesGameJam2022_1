@@ -10,7 +10,7 @@ public class HUDScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI instructionText;
-
+    public GameObject explosionParticle;
     private void Awake()
     {
         HighScoreTextUpdate();
@@ -58,8 +58,16 @@ public class HUDScript : MonoBehaviour
 
         if (GameManager.Level == GameManager.Instance.MaxLevel) 
         {
-            AudioManager.Instance.Play("WinSound");
-            SceneManager.LoadScene(3);
+            GameObject explosion = Instantiate(explosionParticle, Vector3.zero, Quaternion.identity);
+            Destroy(explosion, 2f);
+            AudioManager.Instance.Play("MassiveExplosion");
+           
+            foreach (Target t in FindObjectsOfType<Target>())
+            {
+                t.gameObject.SetActive(false);
+            } 
+
+            Invoke("LoadWinScene", 1.2f); 
         }
     }
 
@@ -68,5 +76,11 @@ public class HUDScript : MonoBehaviour
         AudioManager.Instance.Play("ClickButton"); 
         GameManager.GamePaused = !GameManager.GamePaused;
         Time.timeScale = GameManager.GamePaused ? 0 : 1;
+    }
+
+    private void LoadWinScene()
+    {
+        AudioManager.Instance.Play("WinSound");
+        SceneManager.LoadScene(3);
     }
 }

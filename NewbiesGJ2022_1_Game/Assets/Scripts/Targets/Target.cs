@@ -24,15 +24,16 @@ public class Target : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        if (gameObject.transform.position.x < Bounds.MinX ||
-            gameObject.transform.position.x > Bounds.MaxX ||
-            gameObject.transform.position.y < Bounds.MinY ||
-            gameObject.transform.position.y > Bounds.MaxY ||
-            gameObject.transform.position.z < Bounds.MinZ ||
-            gameObject.transform.position.z > Bounds.MaxZ)
+        if (gameObject.transform.position.x < Bounds.MinX - 5||
+            gameObject.transform.position.x > Bounds.MaxX  + 5||
+            gameObject.transform.position.y < Bounds.MinY - 5||
+            gameObject.transform.position.y > Bounds.MaxY  + 5||
+            gameObject.transform.position.z < Bounds.MinZ  - 5||
+            gameObject.transform.position.z > Bounds.MaxZ + 5)
         {
             gameObject.SetActive(false);
             TargetSpawner.TargetsOnGame--;
+            //Debug.Log("invisible " + TargetSpawner.TargetsOnGame); 
         }
     }
 

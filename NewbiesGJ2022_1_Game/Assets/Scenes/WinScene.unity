@@ -849,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8832803996889318554, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
       propertyPath: m_text
-      value: "(^0^)/  \n- Be a minimalist -"
+      value: "(^0^)/  \n- Make space for what really matters -"
       objectReference: {fileID: 0}
     - target: {fileID: 8832803996889318554, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
       propertyPath: m_fontSize

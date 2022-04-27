@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     private static SavedData dataInfo;
 
-    private float offset = 10f;
+    private float xPosPowerup = Bounds.MinX;
 
     private void Awake()
     {
@@ -137,9 +137,8 @@ public class GameManager : MonoBehaviour
 
     private void PowerupSpawn()
     {
-        Vector3 pos = new Vector3(Random.Range(Bounds.MinX + offset, Bounds.MaxX - offset), Bounds.MaxY,
-            Random.Range(Bounds.MinZ + offset, Bounds.MaxZ - offset));
-
-        GameObject powerup = ObjectPoolManager.SharedInstance.SpawnFromPool("Powerup", pos, Quaternion.identity);
+        xPosPowerup += 3.5f;
+        Vector3 pos = new Vector3(xPosPowerup, Bounds.MaxY, Bounds.MinZ); 
+        ObjectPoolManager.SharedInstance.SpawnFromPool("Powerup", pos, Quaternion.identity);
     }
 }
