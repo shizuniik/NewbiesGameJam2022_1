@@ -66,7 +66,7 @@ public class TargetSpawner : MonoBehaviour
 
     private void AdaptSpawnRate()
     {
-        initialSpawnRate -= 0.1f; 
+        initialSpawnRate -= 0.05f; 
     }
 
     IEnumerator SpawnCoroutine()

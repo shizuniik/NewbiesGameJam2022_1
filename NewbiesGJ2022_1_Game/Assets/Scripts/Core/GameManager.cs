@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
             Level = Mathf.FloorToInt(Score / pointsToUpdLevel) + 1;
             OnChangeLevel?.Invoke();
 
-            PowerupSpawn(); 
+            if(Level >= 10) PowerupSpawn(); 
         }
     }
 
