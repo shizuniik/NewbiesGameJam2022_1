@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro; 
+using TMPro;
+using System.IO; 
 
 public class GameManager : MonoBehaviour
 {
@@ -23,10 +24,14 @@ public class GameManager : MonoBehaviour
     public static event ChangeScore OnChangeHighScore;
     public static event ChangeScore OnChangeLevel;
 
+    private static SavedData dataInfo; 
+
     private void Awake()
     {
         Level = 1;
         Score = 0;
+
+        LoadInfo(); 
     }
     // Start is called before the first frame update
     void Start()
@@ -68,6 +73,8 @@ public class GameManager : MonoBehaviour
         {
             HighScore = Score;
             OnChangeHighScore?.Invoke();
+
+            SaveInfo(); 
         }
     }
 
@@ -86,4 +93,41 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(2); 
     }
 
+    [System.Serializable]
+    class SavedData
+    {
+        public int highScore; 
+    }
+
+    public void SaveInfo()
+    {
+        SavedData data; 
+        if (dataInfo == null)
+        {
+            data = new SavedData();
+        }
+        else
+        {
+            data = dataInfo;  
+        }
+
+        data.highScore = HighScore;
+
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json",json); 
+    }
+
+    public void LoadInfo()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SavedData data = JsonUtility.FromJson<SavedData>(json);
+
+            HighScore = data.highScore;
+            dataInfo = data;
+            //Debug.Log(Application.persistentDataPath); 
+        }
+    }
 }

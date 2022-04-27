@@ -8,7 +8,7 @@ public class UIScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI highScoreText;
 
-    private void Start()
+    private void Awake()
     {
         highScoreText.text = GameManager.HighScore.ToString();
     }
