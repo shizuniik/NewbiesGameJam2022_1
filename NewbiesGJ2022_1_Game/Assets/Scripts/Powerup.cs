@@ -7,14 +7,15 @@ public class Powerup : MonoBehaviour
     [SerializeField] int extraPoints; 
     public void Disappear()
     {
-        extraPoints = extraPoints * GameManager.Level; 
-
+        int points = extraPoints * GameManager.Level;
+    
         if (!GameManager.GamePaused && !GameManager.GameOver)
         {
-            GameManager.UpdateScore(extraPoints);
+            AudioManager.Instance.Play("Powerup");
+            GameManager.UpdateScore(points);
             gameObject.SetActive(false);
 
-            TargetSpawner.TargetsOnGame -= extraPoints; 
+            TargetSpawner.TargetsOnGame -= points; 
         }
     }
 }

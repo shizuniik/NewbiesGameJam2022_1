@@ -35,6 +35,13 @@ public class GunScript : MonoBehaviour
             {
                 target.Disappear();
             }
+
+            Powerup powerup = hit.transform.gameObject.GetComponent<Powerup>();
+
+            if(powerup != null)
+            {
+                powerup.Disappear(); 
+            }
         }
     }
 

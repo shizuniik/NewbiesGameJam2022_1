@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
     public static event ChangeScore OnChangeHighScore;
     public static event ChangeScore OnChangeLevel;
 
-    private static SavedData dataInfo; 
+    private static SavedData dataInfo;
+
+    private float offset = 10f;
 
     private void Awake()
     {
@@ -85,6 +87,8 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.Play("ChangeLevel"); 
             Level = Mathf.FloorToInt(Score / pointsToUpdLevel) + 1;
             OnChangeLevel?.Invoke();
+
+            PowerupSpawn(); 
         }
     }
 
@@ -129,5 +133,13 @@ public class GameManager : MonoBehaviour
             dataInfo = data;
             //Debug.Log(Application.persistentDataPath); 
         }
+    }
+
+    private void PowerupSpawn()
+    {
+        Vector3 pos = new Vector3(Random.Range(Bounds.MinX + offset, Bounds.MaxX - offset), Bounds.MaxY,
+            Random.Range(Bounds.MinZ + offset, Bounds.MaxZ - offset));
+
+        GameObject powerup = ObjectPoolManager.SharedInstance.SpawnFromPool("Powerup", pos, Quaternion.identity);
     }
 }

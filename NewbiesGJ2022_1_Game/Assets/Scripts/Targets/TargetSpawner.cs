@@ -10,7 +10,7 @@ public class TargetSpawner : MonoBehaviour
     public static int TargetsOnGame { get; set; }
 
     public delegate void ChangeTargetsQty();
-    public static event ChangeTargetsQty OnChangeTargetsQty;
+   // public static event ChangeTargetsQty OnChangeTargetsQty;
     public static event ChangeTargetsQty OnChangeGameStatus;
 
     [SerializeField] float initialSpawnRate;
@@ -80,7 +80,7 @@ public class TargetSpawner : MonoBehaviour
             GameObject tc = objectPoolManager.SpawnFromPool("Target3", randomPos(), Quaternion.identity);
             TargetsOnGame++;
 
-            OnChangeTargetsQty?.Invoke();
+           // OnChangeTargetsQty?.Invoke();
 
             WarningNearGameOver();
             CheckGameOver();
