@@ -33,7 +33,7 @@ public class TargetSpawner : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(TargetsOnGame);
+        Debug.Log(TargetsOnGame + " - Level/SpawnRate: " + GameManager.Level + " / " + initialSpawnRate);
         healthBar.SetHealth(TargetsOnGame); 
     }
 
@@ -85,7 +85,17 @@ public class TargetSpawner : MonoBehaviour
     {
         while (!GameManager.GameOver)
         {
-            string targetString = "Target" + SelectRandomTarget().ToString();
+            string targetString;
+
+            if (GameManager.Level < 10)
+            {
+                targetString = "Target" + Random.Range(1, 4).ToString();
+            }
+            else
+            {
+                targetString = "Target" + Random.Range(4, 7).ToString();
+            }
+
             objectPoolManager.SpawnFromPool(targetString, randomPos(), Quaternion.identity, true);
             TargetsOnGame++;
 
@@ -94,11 +104,6 @@ public class TargetSpawner : MonoBehaviour
 
             yield return new WaitForSeconds(initialSpawnRate);
         }
-    }
-
-    private int SelectRandomTarget()
-    {
-        return Random.Range(1, objectPoolManager.poolDictionary.Keys.Count); 
     }
 
 }

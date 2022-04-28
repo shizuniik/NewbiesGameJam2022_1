@@ -376,16 +376,25 @@ MonoBehaviour:
   pools:
   - tag: Target1
     prefab: {fileID: 3792042776292361997, guid: b894270841b99f442a2709e2febe18e8, type: 3}
-    size: 75
+    size: 50
   - tag: Target2
     prefab: {fileID: 4301595673282693844, guid: dca32517beaa4ca47bfbeae99138425e, type: 3}
-    size: 75
+    size: 50
   - tag: Target3
     prefab: {fileID: 2161010947828724841, guid: 99d085746319d2e4cb35a9c890477efc, type: 3}
-    size: 75
+    size: 50
   - tag: Powerup
     prefab: {fileID: 8467802511405498854, guid: 1c3175f683d76ad478673aff1fe106cd, type: 3}
     size: 16
+  - tag: Target4
+    prefab: {fileID: 5535577267566873179, guid: e3d8924ac57d4724d94c38b7a35b3fb5, type: 3}
+    size: 50
+  - tag: Target5
+    prefab: {fileID: 6765187717323712706, guid: cbdc47ec64f547b4e9f0179733d2670b, type: 3}
+    size: 50
+  - tag: Target6
+    prefab: {fileID: 4153742950533725154, guid: 352e285555786a94bba8e67bdf227a10, type: 3}
+    size: 50
 --- !u!114 &520437070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialSpawnRate: 1.1
   warningText: {fileID: 740995287}
-  offset: 10
+  offset: 5
   healthBar: {fileID: 1677124512}
 --- !u!1 &616572015
 GameObject:
