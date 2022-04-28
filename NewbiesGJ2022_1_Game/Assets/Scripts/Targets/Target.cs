@@ -33,7 +33,6 @@ public class Target : MonoBehaviour
         {
             gameObject.SetActive(false);
             TargetSpawner.TargetsOnGame--;
-            //Debug.Log("invisible " + TargetSpawner.TargetsOnGame); 
         }
     }
 

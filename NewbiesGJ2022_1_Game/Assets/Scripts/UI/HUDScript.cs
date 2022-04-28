@@ -11,6 +11,7 @@ public class HUDScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI instructionText;
     public GameObject winExplosionParticle;
+   
     private void Awake()
     {
         HighScoreTextUpdate();
@@ -70,7 +71,9 @@ public class HUDScript : MonoBehaviour
     {
         if (GameManager.Level == GameManager.Instance.MaxLevel)
         {
-            GameObject explosion = Instantiate(winExplosionParticle, new Vector3(0, 30, 0), Quaternion.identity);
+            Vector3 pos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0); 
+            GameManager.GameOver = true; 
+            GameObject explosion = Instantiate(winExplosionParticle, pos, Quaternion.identity);
             Destroy(explosion, 2f);
             AudioManager.Instance.Play("MassiveExplosion");
 

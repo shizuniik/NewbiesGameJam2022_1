@@ -926,7 +926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458799917706879871, guid: 91b5fe75cbc0a0f4b8926cb1571016f6, type: 3}
       propertyPath: MaxLevel
-      value: 26
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458799917706879871, guid: 91b5fe75cbc0a0f4b8926cb1571016f6, type: 3}
+      propertyPath: pointsToUpdLevel
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91b5fe75cbc0a0f4b8926cb1571016f6, type: 3}

@@ -78,18 +78,15 @@ public class TargetSpawner : MonoBehaviour
 
     private void AdaptSpawnRate()
     {
-        initialSpawnRate -= GameManager.Level < 15 ? 0.1f : 0.05f; 
+        initialSpawnRate -= GameManager.Level < 10 ? 0.1f : 0.035f; 
     }
 
     IEnumerator SpawnCoroutine()
     {
         while (!GameManager.GameOver)
         {
-            GameObject ta = objectPoolManager.SpawnFromPool("Target1", randomPos(), Quaternion.identity, false);
-            TargetsOnGame++;
-            GameObject tb = objectPoolManager.SpawnFromPool("Target2", randomPos(), Quaternion.identity, true);
-            TargetsOnGame++;
-            GameObject tc = objectPoolManager.SpawnFromPool("Target3", randomPos(), Quaternion.identity, false);
+            string targetString = "Target" + SelectRandomTarget().ToString();
+            objectPoolManager.SpawnFromPool(targetString, randomPos(), Quaternion.identity, true);
             TargetsOnGame++;
 
             WarningNearGameOver();
@@ -97,6 +94,11 @@ public class TargetSpawner : MonoBehaviour
 
             yield return new WaitForSeconds(initialSpawnRate);
         }
+    }
+
+    private int SelectRandomTarget()
+    {
+        return Random.Range(1, objectPoolManager.poolDictionary.Keys.Count); 
     }
 
 }
