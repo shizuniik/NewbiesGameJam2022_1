@@ -9,7 +9,6 @@ public class Powerup : MonoBehaviour
 
     public void Disappear()
     {
-        //int points = extraPoints * GameManager.Level;
         int points = extraPoints; 
 
         if (!GameManager.GamePaused && !GameManager.GameOver)
@@ -17,8 +16,6 @@ public class Powerup : MonoBehaviour
             AudioManager.Instance.Play("Powerup");
             GameManager.UpdateScore(points);
             gameObject.SetActive(false);
-
-            //TargetSpawner.TargetsOnGame -= points;
 
             DisappearAll(); 
         }

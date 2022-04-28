@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int MaxLevel; 
 
     public static int Score { get;  set; }
-    public static int Level { get; private set; }
+    public static int Level { get; set; }
     public static int HighScore { get; private set; }
     public static bool GameOver { get; set; }
     public static bool GameStarted { get; set; }
@@ -139,6 +139,6 @@ public class GameManager : MonoBehaviour
     {
         xPosPowerup += 3.5f;
         Vector3 pos = new Vector3(xPosPowerup, Bounds.MaxY, Bounds.MinZ); 
-        ObjectPoolManager.SharedInstance.SpawnFromPool("Powerup", pos, Quaternion.identity);
+        ObjectPoolManager.SharedInstance.SpawnFromPool("Powerup", pos, Quaternion.identity, false);
     }
 }

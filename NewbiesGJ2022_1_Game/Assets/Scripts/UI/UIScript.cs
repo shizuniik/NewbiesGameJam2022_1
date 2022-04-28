@@ -22,7 +22,11 @@ public class UIScript : MonoBehaviour
     public void PlayAgain()
     {
         AudioManager.Instance.Play("ClickButton");
-        TargetSpawner.TargetsOnGame = 0; 
+        
+        TargetSpawner.TargetsOnGame = 0;
+        GameManager.Score = 0;
+        GameManager.Level = 1; 
+
         GameManager.GameOver = false;
         GameManager.GameStarted = true; 
         SceneManager.LoadScene(1);

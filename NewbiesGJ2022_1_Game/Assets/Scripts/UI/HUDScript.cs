@@ -10,7 +10,7 @@ public class HUDScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI instructionText;
-    public GameObject explosionParticle;
+    public GameObject winExplosionParticle;
     private void Awake()
     {
         HighScoreTextUpdate();
@@ -56,19 +56,7 @@ public class HUDScript : MonoBehaviour
     {
         levelText.text = GameManager.Level.ToString();
 
-        if (GameManager.Level == GameManager.Instance.MaxLevel) 
-        {
-            GameObject explosion = Instantiate(explosionParticle, Vector3.zero, Quaternion.identity);
-            Destroy(explosion, 2f);
-            AudioManager.Instance.Play("MassiveExplosion");
-           
-            foreach (Target t in FindObjectsOfType<Target>())
-            {
-                t.gameObject.SetActive(false);
-            } 
-
-            Invoke("LoadWinScene", 1.2f); 
-        }
+        CheckWinGame(); 
     }
 
     public void PauseButton()
@@ -76,6 +64,23 @@ public class HUDScript : MonoBehaviour
         AudioManager.Instance.Play("ClickButton"); 
         GameManager.GamePaused = !GameManager.GamePaused;
         Time.timeScale = GameManager.GamePaused ? 0 : 1;
+    }
+
+    private void CheckWinGame()
+    {
+        if (GameManager.Level == GameManager.Instance.MaxLevel)
+        {
+            GameObject explosion = Instantiate(winExplosionParticle, new Vector3(0, 30, 0), Quaternion.identity);
+            Destroy(explosion, 2f);
+            AudioManager.Instance.Play("MassiveExplosion");
+
+            foreach (Target t in FindObjectsOfType<Target>())
+            {
+                t.gameObject.SetActive(false);
+            }
+
+            Invoke("LoadWinScene", 1.5f);
+        }
     }
 
     private void LoadWinScene()

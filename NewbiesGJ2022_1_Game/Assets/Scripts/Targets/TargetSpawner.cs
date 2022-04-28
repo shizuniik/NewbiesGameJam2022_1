@@ -10,19 +10,31 @@ public class TargetSpawner : MonoBehaviour
     public static int TargetsOnGame { get; set; }
 
     public delegate void ChangeTargetsQty();
-   // public static event ChangeTargetsQty OnChangeTargetsQty;
     public static event ChangeTargetsQty OnChangeGameStatus;
 
     [SerializeField] float initialSpawnRate;
     [SerializeField] TextMeshProUGUI warningText;
     [SerializeField] float offset;
 
+    public HealthBar healthBar;
+    private int qtyTargetsToGameOver; 
+
     // Start is called before the first frame update
     void Start()
     {
+        qtyTargetsToGameOver = GameManager.Instance.pointsToUpdLevel * 2;
+        healthBar.SetMaxHealth(qtyTargetsToGameOver);
+
         objectPoolManager = ObjectPoolManager.SharedInstance;
         StartCoroutine("SpawnCoroutine"); 
-        TargetsOnGame = 0; 
+
+        TargetsOnGame = 0;
+    }
+
+    private void Update()
+    {
+        Debug.Log(TargetsOnGame);
+        healthBar.SetHealth(TargetsOnGame); 
     }
 
     private void OnEnable()
@@ -37,7 +49,7 @@ public class TargetSpawner : MonoBehaviour
 
     private void CheckGameOver()
     {
-        if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 1.5f)
+        if (TargetsOnGame > qtyTargetsToGameOver)
         {
             GameManager.GameOver = true;
             AudioManager.Instance.Play("GameOver"); 
@@ -53,7 +65,7 @@ public class TargetSpawner : MonoBehaviour
 
     private void WarningNearGameOver() 
     {
-        if (TargetsOnGame > GameManager.Instance.pointsToUpdLevel * 1.2f)
+        if (TargetsOnGame > qtyTargetsToGameOver * 0.75f)
         {
             AudioManager.Instance.Play("Warning");
             warningText.gameObject.SetActive(true); 
@@ -73,15 +85,12 @@ public class TargetSpawner : MonoBehaviour
     {
         while (!GameManager.GameOver)
         {
-            GameObject ta = objectPoolManager.SpawnFromPool("Target1", randomPos(), Quaternion.identity);
+            GameObject ta = objectPoolManager.SpawnFromPool("Target1", randomPos(), Quaternion.identity, false);
             TargetsOnGame++;
-            GameObject tb = objectPoolManager.SpawnFromPool("Target2", randomPos(), Quaternion.identity);
+            GameObject tb = objectPoolManager.SpawnFromPool("Target2", randomPos(), Quaternion.identity, true);
             TargetsOnGame++;
-            GameObject tc = objectPoolManager.SpawnFromPool("Target3", randomPos(), Quaternion.identity);
+            GameObject tc = objectPoolManager.SpawnFromPool("Target3", randomPos(), Quaternion.identity, false);
             TargetsOnGame++;
-
-            // OnChangeTargetsQty?.Invoke();
-            Debug.Log(TargetsOnGame); 
 
             WarningNearGameOver();
             CheckGameOver();
