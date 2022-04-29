@@ -10,6 +10,7 @@ public class HUDScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI instructionText;
+    [SerializeField] TextMeshProUGUI lastLevelText; 
     public GameObject winExplosionParticle;
    
     private void Awake()
@@ -83,6 +84,15 @@ public class HUDScript : MonoBehaviour
             }
 
             Invoke("LoadWinScene", 1.5f);
+        }
+
+        if (GameManager.Level == GameManager.Instance.MaxLevel - 1)
+        {
+            lastLevelText.gameObject.SetActive(true);
+        }
+        else
+        {
+            lastLevelText.gameObject.SetActive(false);
         }
     }
 

@@ -59,7 +59,8 @@ public class TargetSpawner : MonoBehaviour
 
     private Vector3 randomPos()
     {
-        return new Vector3(Random.Range(Bounds.MinX + offset, Bounds.MaxX - offset), transform.position.y, 
+        return new Vector3(Random.Range(Bounds.MinX + offset, Bounds.MaxX - offset),
+            Random.Range(Bounds.MinY + offset, Bounds.MaxY - offset),
             Random.Range(Bounds.MinZ + offset, Bounds.MaxZ - offset)); 
     }
 
