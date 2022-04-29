@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
             Level = Mathf.FloorToInt(Score / pointsToUpdLevel) + 1;
             OnChangeLevel?.Invoke();
 
-            if(Level >= 10) PowerupSpawn(); 
+            if(Level >= 10 && !GameOver) PowerupSpawn(); 
         }
     }
 
@@ -137,8 +137,8 @@ public class GameManager : MonoBehaviour
 
     private void PowerupSpawn()
     {
-        xPosPowerup += 5f;
-        Vector3 pos = new Vector3(xPosPowerup, Bounds.MaxY - 20, 10); 
+        xPosPowerup += 10;
+        Vector3 pos = new Vector3(xPosPowerup, Bounds.MaxY - 20, 0); 
         ObjectPoolManager.SharedInstance.SpawnFromPool("Powerup", pos, Quaternion.identity, false);
     }
 }

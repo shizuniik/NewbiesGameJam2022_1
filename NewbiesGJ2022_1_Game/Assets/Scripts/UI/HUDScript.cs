@@ -98,7 +98,20 @@ public class HUDScript : MonoBehaviour
 
     private void LoadWinScene()
     {
+        AddExtraPoints(); 
         AudioManager.Instance.Play("WinSound");
         SceneManager.LoadScene(3);
+    }
+
+    private void AddExtraPoints()
+    {
+        foreach (GameObject powerup in ObjectPoolManager.SharedInstance.poolDictionary["Powerup"])
+        {
+            if (powerup.activeInHierarchy)
+            {
+                GameManager.UpdateScore(powerup.GetComponent<Powerup>().extraPoints + 5);
+                Debug.Log(GameManager.Score);
+            }
+        }
     }
 }

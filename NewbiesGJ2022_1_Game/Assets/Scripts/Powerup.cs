@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    [SerializeField] int extraPoints;
+    public int extraPoints;
     public GameObject explosionParticle;
 
     public void Disappear()
