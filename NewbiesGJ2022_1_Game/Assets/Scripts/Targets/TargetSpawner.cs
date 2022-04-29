@@ -33,7 +33,7 @@ public class TargetSpawner : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(TargetsOnGame + " - Level/SpawnRate: " + GameManager.Level + " / " + initialSpawnRate);
+        //Debug.Log(TargetsOnGame + " - Level/SpawnRate: " + GameManager.Level + " / " + initialSpawnRate);
         healthBar.SetHealth(TargetsOnGame); 
     }
 

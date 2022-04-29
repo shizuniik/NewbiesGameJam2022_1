@@ -307,5 +307,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPoints: 3
-  explosionParticle: {fileID: 143918981123517719, guid: 123c2993bcb8c4e44b19292f6fe9496e, type: 3}
+  explosionParticle: {fileID: 143918981123517719, guid: 121aef76d8a8d1a419e21534f2879e04, type: 3}
   rotationSpeed: 30
