@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
     private void PowerupSpawn()
     {
         xPosPowerup += 10;
-        Vector3 pos = new Vector3(xPosPowerup, Bounds.MaxY - 20, 0); 
+        Vector3 pos = new Vector3(xPosPowerup, 30, 0); 
         ObjectPoolManager.SharedInstance.SpawnFromPool("Powerup", pos, Quaternion.identity, false);
     }
 }
