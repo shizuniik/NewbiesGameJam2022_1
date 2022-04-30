@@ -1621,6 +1621,18 @@ PrefabInstance:
       propertyPath: m_text
       value: '> Use Arrow keys to move and Left Ctrl key to shoot! < '
       objectReference: {fileID: 0}
+    - target: {fileID: 8832803996889318554, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.4045123
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832803996889318554, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832803996889318554, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.39991993
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af005ebda1b52514c825f3c84fbced21, type: 3}
 --- !u!114 &701279222 stripped
