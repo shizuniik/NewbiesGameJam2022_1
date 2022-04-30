@@ -24,11 +24,14 @@ public class UIScript : MonoBehaviour
         AudioManager.Instance.Play("ClickButton");
         
         TargetSpawner.TargetsOnGame = 0;
+       
         GameManager.Score = 0;
-        GameManager.Level = 1; 
+        GameManager.Level = 1;
+        GameManager.xPosPowerup = Bounds.MinX;
 
         GameManager.GameOver = false;
         GameManager.GameStarted = true; 
+
         SceneManager.LoadScene(1);
     }
 }

@@ -26,13 +26,13 @@ public class GameManager : MonoBehaviour
 
     private static SavedData dataInfo;
 
-    private float xPosPowerup = Bounds.MinX;
+    public static float xPosPowerup;
 
     private void Awake()
     {
         Level = 1;
         Score = 0;
-
+        xPosPowerup = Bounds.MinX;
         LoadInfo(); 
     }
     // Start is called before the first frame update

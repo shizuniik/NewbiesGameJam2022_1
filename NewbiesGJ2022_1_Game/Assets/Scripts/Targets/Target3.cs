@@ -6,7 +6,7 @@ public class Target3 : Target
 {
     [SerializeField] float rotationSpeed = 20f; 
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         gameObject.transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
 
