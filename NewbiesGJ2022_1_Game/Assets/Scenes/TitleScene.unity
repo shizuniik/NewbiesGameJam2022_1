@@ -422,9 +422,17 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 76ad48eb0a8c94d4a9e59d9f41754c71, type: 3}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[3].name
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
       propertyPath: soundList.Array.data[5].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 56138561de508cc45b796cddba3cb95b, type: 3}
+      objectReference: {fileID: 8300000, guid: 0bcacf4d5f955d34bb1daeba1934ea90, type: 3}
     - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
       propertyPath: soundList.Array.data[5].loop
       value: 0
@@ -450,6 +458,54 @@ PrefabInstance:
       value: MassiveExplosion
       objectReference: {fileID: 0}
     - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b225b27e9cf99c4e84b04f67fdfad88, type: 3}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[8].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[8].name
+      value: Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 76ad48eb0a8c94d4a9e59d9f41754c71, type: 3}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[9].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[9].name
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0bcacf4d5f955d34bb1daeba1934ea90, type: 3}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[10].name
+      value: WinSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 22fe195f50caf8742b485f446999d83d, type: 3}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[11].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[11].name
+      value: Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
       propertyPath: soundList.Array.data[5].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -459,6 +515,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
       propertyPath: soundList.Array.data[7].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[8].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[9].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[10].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[11].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
@@ -472,6 +544,22 @@ PrefabInstance:
     - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
       propertyPath: soundList.Array.data[7].volume
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[8].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[9].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[10].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213581988551079519, guid: 5046507325069b9488b911c54f135dba, type: 3}
+      propertyPath: soundList.Array.data[11].volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5046507325069b9488b911c54f135dba, type: 3}
