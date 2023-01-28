@@ -13,3 +13,5 @@
   - SFXs were created with [jsfxr](https://sfxr.me/). 
  
  
+![1](https://user-images.githubusercontent.com/97367206/215233337-8041bf16-5fa0-4e72-a091-884ec7010058.jpg)
+![3](https://user-images.githubusercontent.com/97367206/215233354-35b1877d-f040-4cbe-84ac-6e394249faa5.jpg)
